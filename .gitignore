@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*-checkpoint.ipynb
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+*.pid
+slow_download.pid
+
+# Temporary files
+temp_*.py
+get_weekly_data.py
+
+# Large data files (optional - keep CSVs for reproducibility)
+# manual_data/*.csv
+
+# Backtest results (can be regenerated)
+results/
+results_real_data/
+results_index_focus/
+
+# Keep visualizations (they're part of the publication)
+# visualizations/
+
+# Output logs
+*.log
+*_output.txt

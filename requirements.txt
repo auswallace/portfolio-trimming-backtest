@@ -1,0 +1,24 @@
+# Portfolio Trimming Strategy Analysis - Dependencies
+
+# Core data science
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Financial data
+yfinance>=0.2.32
+
+# Backtesting framework
+vectorbt>=0.26.0
+
+# Visualization
+matplotlib>=3.7.0
+plotly>=5.18.0
+kaleido>=0.2.1  # For plotly static image export
+
+# Jupyter
+jupyter>=1.0.0
+ipykernel>=6.25.0
+ipywidgets>=8.1.0
+
+# Utilities
+python-dateutil>=2.8.0
