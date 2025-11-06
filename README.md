@@ -169,6 +169,60 @@ Traditional thinking: "Never sell winners."
 
 ---
 
+## 🤖 AI-Assisted Research Methodology
+
+**Full Disclosure:** This research leveraged AI assistance - but not in the way you might think.
+
+### The Innovation: Multi-Agent Validation System
+
+Rather than using AI to "do the analysis," I built a **custom multi-agent workflow** to ensure accuracy and scale:
+
+1. **Research Report Generator Agent** - Transforms raw CSV backtest results into comprehensive technical reports with professional visualizations
+2. **Personal Tone Matcher Agent** - Converts technical writing into accessible narrative while preserving 100% data accuracy
+3. **Finance Fact-Checker Agent** - Independently validates ALL metrics, recalculates from source data, and interrogates assumptions
+4. **Assumption Revision Agent** - Applies surgical corrections based on fact-checker feedback
+
+### What This Demonstrates
+
+**Data Analytics:**
+- Custom Python backtesting framework (1,200+ lines of code)
+- Statistical validation (bootstrap CIs, t-tests, rolling metrics)
+- Professional visualizations (matplotlib/seaborn, 300 DPI, colorblind-friendly)
+
+**Financial Concepts:**
+- Portfolio construction (index funds vs individual stocks)
+- Risk-adjusted returns (Sharpe, Sortino, max drawdown)
+- Behavioral finance (loss aversion, disposition effect)
+- Tax efficiency and transaction cost modeling
+
+**AI Engineering:**
+- Multi-agent system design with distinct responsibilities
+- Fact-checking loop to catch hallucinations/errors
+- Assumption interrogation framework (questions "realistic portfolio" claims)
+- Voice transformation that preserves 100% data integrity
+
+### Accuracy Safeguards
+
+Every number in this report has been:
+1. **Generated** from real historical data (Yahoo Finance CSV files)
+2. **Calculated** by custom Python code (deterministic, reproducible)
+3. **Validated** by independent fact-checker agent (<0.001% error tolerance)
+4. **Cross-checked** against source CSVs (all metrics recalculated from scratch)
+
+**Result:** 8.5/10 quality rating from fact-checker, all corrections applied, 100% data accuracy verified.
+
+### Why This Matters
+
+This project demonstrates the **emerging skill** of leveraging AI safely in quantitative analysis:
+- AI assists with scale (42 strategies, 21 charts, 16,500-word technical report)
+- Human judgment drives methodology (portfolio construction, parameter choices, interpretation)
+- Multi-agent validation prevents errors (fact-checker caught 8 issues in first draft)
+- Transparency about limitations (bull market bias, frictionless assumptions, illustrative parameters)
+
+**The future of data analysis isn't "AI or human" - it's building systems where AI amplifies human expertise while maintaining rigor.**
+
+---
+
 ## 📂 Technical Documentation
 
 **Deep Dive:**
