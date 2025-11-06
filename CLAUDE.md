@@ -25,7 +25,7 @@ This file provides guidance to Claude Code when working with the **Portfolio Tri
 - ✅ Multi-agent report generation workflow built
 - ✅ Publication-ready Jupyter notebook created with fact-checking
 - ✅ Professional visualizations generated (7 charts, 300 DPI)
-- ✅ Dick Capital voice transformation applied
+- ✅ DC voice transformation applied
 - ✅ Assumption interrogation and corrections completed
 - ✅ **NEW:** 42 strategies tested (added momentum-guided, volatility-based trimming)
 - ✅ **NEW:** Cost/tax modeling implemented (toggleable transaction costs & capital gains tax)
@@ -113,7 +113,7 @@ We built a sophisticated 4-agent pipeline to create publication-quality research
 
 ### Agent 2: Personal Tone Matcher (Voice Transformation)
 **File:** `.claude/agents/personal-tone-matcher.md`
-**Purpose:** Transform technical writing into Dick Capital voice
+**Purpose:** Transform technical writing into DC voice
 **Job:**
 - Rewrite formal analysis in conversational, direct, punchy style
 - Preserve 100% of data and factual content
@@ -124,7 +124,7 @@ We built a sophisticated 4-agent pipeline to create publication-quality research
 - Self-aware and honest (acknowledge mistakes, show learning journey)
 - Unapologetically blunt ("getting folded," "trading for peanuts")
 - Community-focused (use "we," create shared experience)
-**Output:** Same notebook/report with Dick Capital voice applied
+**Output:** Same notebook/report with DC voice applied
 
 ### Agent 3: Finance Fact-Checker (Quality Control)
 **File:** `.claude/agents/finance-fact-checker.md`
@@ -160,7 +160,7 @@ We built a sophisticated 4-agent pipeline to create publication-quality research
     ↓
 [Condensed Version] → RESEARCH_REPORT_FINAL_CONDENSED.ipynb (~1,800 words)
     ↓
-[Agent 2: Tone Matcher] → Dick Capital voice applied
+[Agent 2: Tone Matcher] → DC voice applied
     ↓
 [Agent 3: Fact-Checker] → Identifies 8 errors (returns, averages, tax section)
     ↓
@@ -294,8 +294,8 @@ trim_strat_test/
 ### Session 4: Report Generation Workflow
 - Created research-report-generator agent → Generated comprehensive Jupyter notebook
 - User requested condensed version (~1,800 words vs 3,800)
-- Created personal-tone-matcher agent → Applied Dick Capital voice
-- User reported author attribution error (Dick Capital vs Austin Wallace)
+- Created personal-tone-matcher agent → Applied DC voice
+- User reported author attribution error (DC vs Austin Wallace)
 - Fixed and regenerated with impressive visualizations (7 charts, 300 DPI)
 - Created finance-fact-checker agent → Found 8 numerical/citation errors
 - Applied surgical corrections → RESEARCH_REPORT_FINAL_REVISED.ipynb
@@ -427,7 +427,7 @@ plt.savefig('visualizations/filename.png', bbox_inches='tight')
 
 ### When to Use Personal Tone Matcher
 - After technical report is complete
-- When you want Dick Capital voice transformation
+- When you want DC voice transformation
 - Preserves 100% of data, changes only delivery/tone
 - Example: "The results were statistically significant" → "Here's the reality: the numbers crushed it"
 
@@ -481,7 +481,7 @@ The Phase 3 breakthrough wasn't better code - it was questioning the assumption 
 First fact-checker caught math errors but accepted "realistic portfolio" claim. Enhanced version with assumption interrogation caught unjustified language.
 
 ### 3. Voice Transformation Must Preserve Data
-Personal-tone-matcher rule: 100% of data preserved, 0% of formality preserved. Dick Capital voice makes reports engaging WITHOUT sacrificing accuracy.
+Personal-tone-matcher rule: 100% of data preserved, 0% of formality preserved. DC voice makes reports engaging WITHOUT sacrificing accuracy.
 
 ### 4. Multi-Agent Workflow Improves Quality
 Technical Writer → Tone Matcher → Fact-Checker → Revision = publication-ready output with minimal user intervention.
@@ -517,7 +517,7 @@ Strategy mechanics (trim thresholds, reinvestment) matter LESS than what you own
 ### DO
 - Question ALL assumptions (portfolio construction, parameters, language)
 - Use multi-agent workflow for publication-quality output
-- Preserve Dick Capital voice in final reports (conversational, direct, honest)
+- Preserve DC voice in final reports (conversational, direct, honest)
 - Generate professional visualizations (300 DPI, colorblind palettes)
 - Document all phases of research (even failed experiments like dip-buy)
 
@@ -527,7 +527,7 @@ Strategy mechanics (trim thresholds, reinvestment) matter LESS than what you own
 **File:** `RESEARCH_REPORT_FINAL_PUBLICATION_READY.ipynb`
 **Word Count:** ~1,800 words
 **Charts:** 7 professional visualizations (300 DPI)
-**Voice:** Dick Capital (conversational, direct, punchy)
+**Voice:** DC (conversational, direct, punchy)
 **Fact-Checked:** ✅ Enhanced fact-checker with assumption interrogation
 **Corrections Applied:** ✅ All Priority 1 assumption issues fixed
 
