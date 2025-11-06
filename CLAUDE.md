@@ -19,7 +19,7 @@ This file provides guidance to Claude Code when working with the **Portfolio Tri
 
 ## Project Status
 
-**Phase:** Publication-Ready Research Report Complete ✅
+**Phase:** Publication-Ready Research Report + Major Updates Complete ✅
 
 - ✅ Three-phase backtest completed (NVDA-dominated, Dip-buy innovation, Index-focused realistic)
 - ✅ Multi-agent report generation workflow built
@@ -27,8 +27,12 @@ This file provides guidance to Claude Code when working with the **Portfolio Tri
 - ✅ Professional visualizations generated (7 charts, 300 DPI)
 - ✅ Dick Capital voice transformation applied
 - ✅ Assumption interrogation and corrections completed
+- ✅ **NEW:** 42 strategies tested (added momentum-guided, volatility-based trimming)
+- ✅ **NEW:** Cost/tax modeling implemented (toggleable transaction costs & capital gains tax)
+- ✅ **NEW:** Comprehensive validation complete (all metrics verified accurate)
+- ✅ **NEW:** Advanced metrics added (rolling 3yr CAGR/DD, bootstrap CIs, sensitivity heatmaps)
 
-**Current Status (2025-11-05):** Project complete. Publication-ready notebook available at `RESEARCH_REPORT_FINAL_PUBLICATION_READY.ipynb`.
+**Current Status (2025-11-06):** All updates complete. Backtest engine enhanced with cost/tax toggles, validation passed, comprehensive notebook ready. Project ready for publication.
 
 ## Three-Phase Research Journey
 
@@ -287,7 +291,7 @@ trim_strat_test/
 - **Discovery:** Trimming nearly matched buy-and-hold (21.36% vs 21.69% CAGR)
 - Findings completely flipped from Phase 1
 
-### Session 4: Report Generation Workflow (Current)
+### Session 4: Report Generation Workflow
 - Created research-report-generator agent → Generated comprehensive Jupyter notebook
 - User requested condensed version (~1,800 words vs 3,800)
 - Created personal-tone-matcher agent → Applied Dick Capital voice
@@ -300,6 +304,33 @@ trim_strat_test/
 - Ran enhanced fact-check → Found "realistic portfolio" claims unsupported
 - Created assumption-revision-agent → Applied Priority 1 fixes
 - **Output:** RESEARCH_REPORT_FINAL_PUBLICATION_READY.ipynb ✅
+
+### Session 5: Major Updates & Enhancements (Current)
+**UPDATE 1: Backtesting & Strategy Development** ✅
+- Added 2 new trimming strategies: momentum-guided and volatility-based (1.5×, 2.0×, 2.5× thresholds)
+- Added 2 new reinvestment models: drip (25%/week) and yield/volatility-based reentry
+- Expanded from 13 to 42 total strategies (5 trim types × 6 reinvest modes + baseline)
+- **Critical fix:** Volatility strategy metrics (capped extreme returns at ±50%, gradual yield/volatility reentry)
+- **Breakthrough:** Volatility-2.5× (pro-rata) achieved 26.98% CAGR (beat B&H by 52%!)
+- Added rolling 3-year CAGR/drawdown calculations
+- Added bootstrap 95% confidence intervals (1,000 iterations)
+- Generated sensitivity heatmaps (trim threshold vs trim size)
+
+**UPDATE 2: Comprehensive Jupyter Notebook** ✅
+- Created COMPREHENSIVE_BACKTEST_REPORT.ipynb (27 cells)
+- Added 8+ professional visualizations (cumulative growth, rolling metrics, risk-return scatter, heatmaps)
+- Executive summary answering "who benefits, by how much, in which environments"
+- Documented all assumptions and methodological choices
+
+**UPDATE 3: Cost/Tax Modeling & Validation** ✅
+- Added transaction cost toggle (default: 0%, configurable to 0.05-0.5%)
+- Added capital gains tax toggle (default: 0%, configurable to 15-37%)
+- Applied costs to ALL transactions (both selling and buying/reinvestment)
+- Tracked total costs/taxes in metrics (new columns: `total_transaction_costs`, `total_capital_gains_tax`)
+- Created comprehensive validation script (`src/validation/comprehensive_validation.py`)
+- **Validation Results:** All core metrics (CAGR, Sharpe, Sortino, Max DD) verified accurate ✅
+- Documented cost/tax modeling in `docs/COST_TAX_MODELING.md` (comprehensive 200+ line guide)
+- **Status:** All 3 major updates complete, project ready for publication
 
 ## Technical Implementation
 
