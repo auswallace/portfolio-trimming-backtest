@@ -24,19 +24,19 @@
 ## 📊 Read the Full Report
 
 ### **Option 1: Jupyter Notebook** (Recommended for Technical Audiences)
-**File:** [`BACKTEST_REPORT_DC_VOICE.ipynb`](BACKTEST_REPORT_DC_VOICE.ipynb)
+**File:** [`Taking_Profits_What_Actually_Works.ipynb`](Taking_Profits_What_Actually_Works.ipynb)
 - 4,414 words with 8 embedded charts
 - Interactive format, can export to PDF
 - Best for GitHub viewing and technical sharing
 
 ### **Option 2: Standalone HTML** (Best for Web Sharing)
-**File:** [`BACKTEST_REPORT_DC_VOICE.html`](BACKTEST_REPORT_DC_VOICE.html)
+**File:** [`Taking_Profits_What_Actually_Works.html`](Taking_Profits_What_Actually_Works.html)
 - Self-contained with all charts embedded
 - Opens in any browser, no dependencies
 - Print to PDF directly from browser
 
 ### **Option 3: Markdown Source** (For Editing)
-**File:** [`BACKTEST_REPORT_DC_VOICE.md`](BACKTEST_REPORT_DC_VOICE.md)
+**File:** [`Taking_Profits_What_Actually_Works.md`](Taking_Profits_What_Actually_Works.md)
 - Lightweight text version
 - Charts in `/visualizations/` folder
 - Easy to edit and version control
