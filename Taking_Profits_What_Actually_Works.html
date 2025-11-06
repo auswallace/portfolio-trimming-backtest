@@ -479,6 +479,82 @@
 </table>
 <p><em>Full 42-strategy results available in <code>/results_index_focus/index_focus_results.csv</code></em></p>
 <hr />
+<h2>Strategy Glossary</h2>
+<p>Each strategy combines two components: a <strong>trimming trigger</strong> (when to sell) and a <strong>reinvestment mode</strong> (where proceeds go).</p>
+<hr />
+<h3>Trimming Triggers (When to Sell)</h3>
+<p><strong>Buy-and-Hold</strong>
+- <strong>What it does</strong>: Never sell. Hold all positions regardless of gains.
+- <strong>Example</strong>: TSLA bought at $100 rises to $400 → Do nothing, still hold 100% of position.</p>
+<p><strong>Trim@+50%</strong>
+- <strong>What it does</strong>: Sell 20% of a position when it gains 50%.
+- <strong>Example</strong>: AAPL bought at $100 rises to $150 → Sell 20% at $150, keep 80%.</p>
+<p><strong>Trim@+100%</strong>
+- <strong>What it does</strong>: Sell 20% of a position when it doubles (+100% gain).
+- <strong>Example</strong>: MSFT bought at $200 rises to $400 → Sell 20% at $400, keep 80%.</p>
+<p><strong>Trim@+150%</strong>
+- <strong>What it does</strong>: Sell 20% of a position when it gains 150% (2.5x).
+- <strong>Example</strong>: NVDA bought at $100 rises to $250 → Sell 20% at $250, keep 80%.</p>
+<p><strong>Volatility-2.0x</strong>
+- <strong>What it does</strong>: Dynamic threshold based on 2× the stock's 30-day rolling average gain.
+- <strong>Example</strong>: If SPY typically gains 5% over 30 days, trim threshold is 10% (2× the average). More volatile = higher threshold.</p>
+<p><strong>Volatility-2.5x</strong>
+- <strong>What it does</strong>: Dynamic threshold based on 2.5× the stock's 30-day rolling average gain.
+- <strong>Example</strong>: If QQQ typically gains 8% over 30 days, trim threshold is 20% (2.5× the average). Adapts to market conditions.</p>
+<hr />
+<h3>Reinvestment Modes (Where Proceeds Go)</h3>
+<p><strong>pro-rata</strong>
+- <strong>What it does</strong>: Immediately reinvest proceeds back into all holdings proportionally.
+- <strong>Example</strong>: Sell $10,000 from TSLA → Buy $3,000 SPY, $2,000 QQQ, $1,000 VOO, $1,500 AAPL, $1,500 MSFT, $1,000 TSLA (matching original portfolio allocation).
+- <strong>Why</strong>: Maintains exposure to high-growth stocks. Doesn't rotate away from winners.</p>
+<p><strong>drip</strong>
+- <strong>What it does</strong>: Gradually reinvest proceeds over 4 weeks (25% per week), pro-rata allocation.
+- <strong>Example</strong>: Sell $10,000 from NVDA → Week 1: invest $2,500 pro-rata, Week 2: $2,500, Week 3: $2,500, Week 4: $2,500.
+- <strong>Why</strong>: Dollar-cost averaging during volatile periods. Spreads entry timing.</p>
+<p><strong>spy</strong>
+- <strong>What it does</strong>: Immediately reinvest all proceeds into SPY (S&amp;P 500 ETF).
+- <strong>Example</strong>: Sell $10,000 from AAPL → Buy $10,000 SPY.
+- <strong>Why</strong>: Rotate profits from individual stocks to diversified index. Reduces concentration risk.</p>
+<p><strong>dip-buy-5pct</strong>
+- <strong>What it does</strong>: Hold proceeds in cash, wait for S&amp;P 500 to drop 5% from recent high, then buy SPY/QQQ (alternating).
+- <strong>Example</strong>: Sell $10,000 from MSFT on June 1 → S&amp;P drops 5% on July 15 → Buy $10,000 SPY on July 15.
+- <strong>Why</strong>: Attempt to time market entries. Wait for dips before deploying capital.</p>
+<p><strong>yield-volatility</strong>
+- <strong>What it does</strong>: Gradually reinvest over 1-8 weeks based on dividend yield and VIX signals. Higher yield + higher VIX = faster reentry.
+- <strong>Example</strong>: Sell $10,000 during high volatility (VIX 30) → Reinvest 50% in week 1, 50% in week 2 (fast reentry during fear).
+- <strong>Why</strong>: Use market signals to guide reinvestment pace. Buy more aggressively when valuations attractive.</p>
+<hr />
+<h3>Full Strategy Examples</h3>
+<p><strong>Volatility-2.5x (pro-rata)</strong>
+- <strong>Trigger</strong>: Trim 20% when position exceeds 2.5× its rolling 30-day average gain.
+- <strong>Reinvestment</strong>: Immediately reinvest proceeds across all holdings proportionally.
+- <strong>Real scenario</strong>: TSLA gains 60% in a month (2.5× its typical 24% monthly gain) → Trim 20% at peak → Immediately reinvest pro-rata → Maintain exposure to TSLA and other winners.</p>
+<p><strong>Trim@+100% (drip)</strong>
+- <strong>Trigger</strong>: Trim 20% when position doubles.
+- <strong>Reinvestment</strong>: Gradually reinvest proceeds over 4 weeks (25%/week), pro-rata.
+- <strong>Real scenario</strong>: AAPL bought at $150, rises to $300 → Sell 20% → Week 1: invest 25% of proceeds, Week 2: 25%, Week 3: 25%, Week 4: 25% → Dollar-cost average reentry.</p>
+<p><strong>Trim@+150% (spy)</strong>
+- <strong>Trigger</strong>: Trim 20% when position gains 150%.
+- <strong>Reinvestment</strong>: Immediately rotate all proceeds to SPY.
+- <strong>Real scenario</strong>: NVDA bought at $100, rises to $250 → Sell 20% → Immediately buy SPY with all proceeds → Rotate from individual stock to index.</p>
+<p><strong>Volatility-2.0x (yield-volatility)</strong>
+- <strong>Trigger</strong>: Trim 20% when position exceeds 2× its rolling average gain.
+- <strong>Reinvestment</strong>: Gradually reinvest using yield/VIX signals (1-8 weeks).
+- <strong>Real scenario</strong>: QQQ gains 20% (2× its typical 10% gain) during volatile period → Trim 20% → VIX is high (35), so reinvest 40% in week 1, 30% in week 2, 30% in week 3 → Use volatility to guide timing.</p>
+<p><strong>Trim@+150% (dip-buy-5pct)</strong>
+- <strong>Trigger</strong>: Trim 20% when position gains 150%.
+- <strong>Reinvestment</strong>: Wait for 5% S&amp;P dip, then buy SPY/QQQ alternating.
+- <strong>Real scenario</strong>: MSFT bought at $200, rises to $500 → Sell 20% on March 1 → S&amp;P drops 5% on April 10 → Buy SPY with proceeds on April 10 → Wait for dip before redeploying.</p>
+<hr />
+<h3>Key Takeaway</h3>
+<p><strong>Best performers in index-focused portfolio (Phase 3):</strong>
+1. <strong>Volatility-2.5x (pro-rata)</strong>: Adapts to market conditions, maintains winner exposure → 26.98% CAGR
+2. <strong>Trim@+100% (drip)</strong>: Fixed threshold with gradual reentry → 21.48% CAGR
+3. <strong>Buy-and-Hold</strong>: Passive benchmark → 21.69% CAGR</p>
+<p><strong>Worst performers:</strong>
+- <strong>Dip-buy strategies</strong>: Cash drag from waiting destroyed returns → 18-20% CAGR
+- <strong>SPY rotation</strong>: Moved capital from winners to slower index → 19-21% CAGR</p>
+<hr />
 <p><strong>Backtest Code</strong>: Available at <code>/Users/austinwallace/sandbox/stock_strategies/trim_strat_test/</code>
 <strong>Data Source</strong>: Yahoo Finance (2015-2024)
 <strong>Validation</strong>: Comprehensive validation script confirms metric accuracy (<code>/src/validation/comprehensive_validation.py</code>)</p>
