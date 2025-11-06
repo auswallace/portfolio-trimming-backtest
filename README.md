@@ -25,7 +25,7 @@
 
 ### **Option 1: Jupyter Notebook** (Recommended for Technical Audiences)
 **File:** [`Taking_Profits_What_Actually_Works.ipynb`](Taking_Profits_What_Actually_Works.ipynb)
-- 4,414 words with 8 embedded charts
+- 2,194 words with 8 embedded charts
 - Interactive format, can export to PDF
 - Best for GitHub viewing and technical sharing
 
@@ -35,7 +35,14 @@
 - Opens in any browser, no dependencies
 - Print to PDF directly from browser
 
-### **Option 3: Markdown Source** (For Editing)
+### **Option 3: Mobile-Optimized HTML** (Best for iPhone/Mobile)
+**File:** [`Taking_Profits_What_Actually_Works_MOBILE.html`](Taking_Profits_What_Actually_Works_MOBILE.html)
+- Mobile-responsive design, perfect for texting/AirDropping
+- Minimal table of contents (18 sections)
+- All 8 charts embedded, optimized for mobile Safari
+- Ideal for sharing with friends on iPhone
+
+### **Option 4: Markdown Source** (For Editing)
 **File:** [`Taking_Profits_What_Actually_Works.md`](Taking_Profits_What_Actually_Works.md)
 - Lightweight text version
 - Charts in `/visualizations/` folder

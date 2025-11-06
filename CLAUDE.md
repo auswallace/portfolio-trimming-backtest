@@ -32,9 +32,9 @@ This file provides guidance to Claude Code when working with the **Portfolio Tri
 - ✅ **NEW:** Comprehensive validation complete (all metrics verified accurate)
 - ✅ **NEW:** Advanced metrics added (rolling 3yr CAGR/DD, bootstrap CIs, sensitivity heatmaps)
 
-**Current Status (2025-11-06):** ✅ PUBLICATION-READY - ALL FORMATS COMPLETE
+**Current Status (2025-11-06):** ✅ PUBLICATION-READY - ALL FORMATS COMPLETE + CRITICAL CHART FIX
 
-Session 6 finalized with editorial refinement, format fixes, glossary addition, chart corrections, and project cleanup. Three publication formats working perfectly (Jupyter, HTML, Markdown). Professional whitepaper quality (2,194 words), 8 embedded charts, comprehensive strategy glossary. 100% data accuracy preserved. Ready for immediate publication to GitHub, Medium, or personal blog.
+Session 6 finalized with editorial refinement, format fixes, glossary addition, chart corrections, and project cleanup. **Critical fix applied:** Phase 1 chart now correctly displays $5.4M buy-and-hold results (was incorrectly showing Phase 3 data). Four publication formats working perfectly (Jupyter, HTML, Mobile HTML, Markdown). Professional whitepaper quality (2,194 words), 8 embedded charts (all corrected), comprehensive strategy glossary. 100% data accuracy preserved. Ready for immediate publication to GitHub, Medium, or personal blog.
 
 ## Three-Phase Research Journey
 
@@ -633,21 +633,31 @@ Strategy mechanics (trim thresholds, reinvestment) matter LESS than what you own
 ## Publication-Ready Outputs ⭐
 
 ### CURRENT: Phase 4 Report (Session 6) - 42 Strategies
-### Three Publication Formats Available:
+### Four Publication Formats Available:
 
 **1. Jupyter Notebook (Best for Technical Sharing)**
-- **File:** `Taking_Profits_What_Actually_Works.ipynb` (4.9 MB)
+- **File:** `Taking_Profits_What_Actually_Works.ipynb` (4.7 MB)
 - 35 cells (includes 8 embedded charts + strategy glossary)
 - All visualizations display inline at perfect narrative points
 - Can export to PDF, share on GitHub, run interactively
+- **Updated:** Phase 1 chart corrected ($5.4M data)
 
 **2. Standalone HTML (Best for Web Sharing)**
-- **File:** `Taking_Profits_What_Actually_Works.html` (30 KB)
+- **File:** `Taking_Profits_What_Actually_Works.html` (5.0 MB)
 - Professional typography and styling
 - Opens in any browser, no dependencies
 - Can print to PDF directly (Cmd+P → Save as PDF)
+- **Updated:** Phase 1 chart corrected ($5.4M data)
 
-**3. Markdown Source (For Editing/GitHub)**
+**3. Mobile-Optimized HTML (Best for iPhone/Mobile Sharing)**
+- **File:** `Taking_Profits_What_Actually_Works_MOBILE.html` (4.7 MB)
+- Minimal table of contents (18 main sections)
+- Mobile-responsive design (full width on small screens)
+- Perfect for texting/AirDropping to friends
+- All 8 charts embedded, optimized for mobile Safari
+- **Updated:** Phase 1 chart corrected ($5.4M data)
+
+**4. Markdown Source (For Editing/GitHub)**
 - **File:** `Taking_Profits_What_Actually_Works.md` (24 KB)
 - Properly formatted with clean spacing (494 lines)
 - Chart references (images separate in /visualizations/)
@@ -669,7 +679,7 @@ Strategy mechanics (trim thresholds, reinvestment) matter LESS than what you own
 - After-tax: Still beats by $286k
 
 ### 8 Charts Embedded in Notebook/HTML:
-1. Performance Waterfall - Top 20 Strategies
+1. Performance Waterfall - Phase 1 Strategies **[CORRECTED: Now shows $5.4M buy-and-hold]**
 2. Risk-Return Efficient Frontier
 3. Cumulative Returns Over Time (2015-2024)
 4. Rolling 1-Year Returns
