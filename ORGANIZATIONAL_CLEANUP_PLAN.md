@@ -46,7 +46,7 @@ notebooks/
 ```
 notebooks/
 ├── COMPREHENSIVE_BACKTEST_REPORT.ipynb  # NEW - Most current (37 cells) ⭐
-├── RESEARCH_REPORT.ipynb                # OLD - Phase 4 (Dick Capital voice)
+├── RESEARCH_REPORT.ipynb                # OLD - Phase 4 (DC voice)
 ├── RESEARCH_REPORT_CONDENSED.ipynb      # OLD - Phase 4 condensed version
 ├── portfolio_trimming_analysis.ipynb    # VERY OLD - Original Phase 1/2
 ```
@@ -191,7 +191,7 @@ cat > notebooks/README.md << 'EOF'
 
 ## Archived Notebooks (Historical Reference)
 See `archive/` for older versions:
-- `RESEARCH_REPORT.ipynb` - Phase 4 (Dick Capital voice transformation)
+- `RESEARCH_REPORT.ipynb` - Phase 4 (DC voice transformation)
 - `RESEARCH_REPORT_CONDENSED.ipynb` - Phase 4 condensed version
 - `portfolio_trimming_analysis.ipynb` - Original Phase 1/2 analysis
 
@@ -199,7 +199,7 @@ See `archive/` for older versions:
 1. Phase 1: NVDA-dominated portfolio (6 stocks equal-weight)
 2. Phase 2: Dip-buy innovation testing
 3. Phase 3: Realistic index-focused portfolio (60/40 split)
-4. Phase 4: Dick Capital voice transformation + fact-checking
+4. Phase 4: DC voice transformation + fact-checking
 5. Phase 5 (UPDATE 3): Cost/tax modeling, validation, comprehensive fact-checking
 EOF
 ```
@@ -338,7 +338,7 @@ trim_strat_test/
 │   ├── README.md                      # Explains current notebook (NEW) ⭐
 │   ├── COMPREHENSIVE_BACKTEST_REPORT.ipynb  # CURRENT (37 cells) ⭐
 │   └── archive/                       # Old notebooks (NEW) ⭐
-│       ├── RESEARCH_REPORT.ipynb     # Phase 4 (Dick Capital voice)
+│       ├── RESEARCH_REPORT.ipynb     # Phase 4 (DC voice)
 │       ├── RESEARCH_REPORT_CONDENSED.ipynb
 │       └── portfolio_trimming_analysis.ipynb
 │

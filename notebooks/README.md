@@ -27,7 +27,7 @@
 
 See `archive/` directory for older versions from Phase 1-4:
 
-- **`RESEARCH_REPORT.ipynb`** - Phase 4 (Dick Capital voice transformation)
+- **`RESEARCH_REPORT.ipynb`** - Phase 4 (DC voice transformation)
 - **`RESEARCH_REPORT_CONDENSED.ipynb`** - Phase 4 condensed version (~1,800 words)
 - **`portfolio_trimming_analysis.ipynb`** - Original Phase 1/2 analysis (NVDA-dominated portfolio)
 
@@ -40,7 +40,7 @@ These are preserved for historical reference but are **superseded** by the compr
 1. **Phase 1**: NVDA-dominated portfolio (equal-weight 6 stocks) - Buy-and-hold crushed trimming
 2. **Phase 2**: Dip-buy innovation testing - Opportunity cost > timing benefit
 3. **Phase 3**: Realistic index-focused portfolio (60/40 split) - Trimming nearly matched buy-and-hold
-4. **Phase 4**: Dick Capital voice transformation + initial fact-checking
+4. **Phase 4**: DC voice transformation + initial fact-checking
 5. **Phase 5 (UPDATE 3)**: Cost/tax modeling, comprehensive validation, extensive fact-checking
 
 ---

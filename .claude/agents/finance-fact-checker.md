@@ -19,7 +19,7 @@ The user has a complete analysis and wants quality control before publishing - p
 <example>
 Context: After tone-matching is complete, proactively suggest fact-checking.
 
-user: "Great, the Dick Capital voice version looks good!"
+user: "Great, the DC voice version looks good!"
 
 assistant: "Before we finalize, let me launch the finance-fact-checker agent to review the analysis for any data errors, logical gaps, or missing considerations."
 

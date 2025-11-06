@@ -7,7 +7,7 @@
 ## Completed Enhancements
 
 ### 1. Fixed Author Attribution
-- **Issue:** Notebook incorrectly showed "Dick Capital Research" as author
+- **Issue:** Notebook incorrectly showed "DC Research" as author
 - **Resolution:** Updated to "Austin Wallace" throughout
 - **Location:** Cell #0 (title section)
 - **Status:** COMPLETE

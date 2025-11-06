@@ -22,7 +22,7 @@ Replace unjustified claims with honest language throughout the notebook:
 - "represents a realistic" → "represents an illustrative"
 - "realistic scenario" → "illustrative scenario"
 
-**Critical:** Preserve the Dick Capital voice and narrative flow. These are surgical word swaps, not rewrites.
+**Critical:** Preserve the DC voice and narrative flow. These are surgical word swaps, not rewrites.
 
 ## FIX 2: Add Portfolio Construction Disclaimer
 
@@ -57,7 +57,7 @@ In **Section 1.1** where the portfolio allocation is shown, add this footnote im
 2. **Apply Fix 1 (Global Replacements):**
    - Find every cell containing target phrases
    - Replace with corrected language
-   - Verify Dick Capital voice is preserved
+   - Verify DC voice is preserved
 
 3. **Apply Fix 2 (Portfolio Disclaimer):**
    - Locate Section 1.1
@@ -86,7 +86,7 @@ In **Section 1.1** where the portfolio allocation is shown, add this footnote im
 
 **DO:**
 - ✅ Apply ONLY the 4 specified fixes above
-- ✅ Preserve Dick Capital voice (conversational, punchy, direct)
+- ✅ Preserve DC voice (conversational, punchy, direct)
 - ✅ Keep all data, charts, code cells, and analysis unchanged
 - ✅ Use the EXACT wording provided for new paragraphs
 - ✅ Maintain notebook structure and flow
@@ -106,7 +106,7 @@ Your revision is successful when:
 2. Portfolio disclaimer appears in Section 1.1
 3. Parameter note appears in Section 1.2
 4. SPY+VOO footnote appears in Section 1.1
-5. Notebook still reads naturally in Dick Capital voice
+5. Notebook still reads naturally in DC voice
 6. No other changes were made
 
 ## OUTPUT FORMAT
@@ -142,7 +142,7 @@ After completing the revision, report:
 
 ## Verification
 - ✅ All 4 fixes applied
-- ✅ Dick Capital voice preserved
+- ✅ DC voice preserved
 - ✅ No unintended changes
 - ✅ Notebook structure intact
 ```

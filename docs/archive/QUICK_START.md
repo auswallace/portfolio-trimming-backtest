@@ -36,7 +36,7 @@ Checks:
 
 ## What Changed?
 
-1. **Author fixed**: Dick Capital → Austin Wallace
+1. **Author fixed**: DC → Austin Wallace
 2. **7 new impressive charts** added (300 DPI, publication-quality)
 3. **New notebook section**: 2.2 Enhanced Visualizations
 4. **All charts validated**: 14/14 references working

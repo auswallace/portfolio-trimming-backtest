@@ -42,8 +42,8 @@ for cell in notebook['cells']:
             if 'Austin Wallace' in source:
                 correct_author = True
                 print("  PASS: Author correctly listed as Austin Wallace")
-            elif 'Dick Capital' in source:
-                print("  FAIL: Author still shows as Dick Capital")
+            elif 'DC' in source:
+                print("  FAIL: Author still shows as DC")
             else:
                 print(f"  WARNING: Found 'Author:' but unknown name")
 
