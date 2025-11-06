@@ -29,7 +29,7 @@
 ---
 
 ### 2. **Standalone HTML** (Best for Web Sharing)
-**File:** `Taking_Profits_What_Actually_Works.html` (4.9 MB)
+**File:** `Taking_Profits_What_Actually_Works.html` (5.0 MB)
 
 **Contents:**
 - Complete report with all 8 charts embedded as base64
@@ -41,7 +41,24 @@
 - Double-click to open in browser
 - Host on personal website/blog
 - Convert to PDF: Open in browser → Print → Save as PDF
-- Share via email (file size: 4.9 MB)
+- Share via email (file size: 5.0 MB)
+
+---
+
+### 2b. **Mobile-Optimized HTML** (Best for iPhone/Mobile Sharing)
+**File:** `Taking_Profits_What_Actually_Works_MOBILE.html` (4.7 MB)
+
+**Contents:**
+- Complete report with all 8 charts embedded
+- Minimal table of contents (18 main sections)
+- Mobile-responsive design (adapts to screen size)
+- Perfect for texting/AirDropping to friends
+
+**How to Use:**
+- Text/AirDrop directly to iPhone users
+- Opens perfectly in Safari on any device
+- Convert to PDF: Open in Safari → Cmd+P → Save as PDF
+- Better mobile centering and readability than standard HTML
 
 ---
 
