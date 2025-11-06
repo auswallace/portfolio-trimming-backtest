@@ -189,9 +189,9 @@ trim_strat_test/
 ├── PUBLICATION_READY.md                           # Guide for publishing/sharing
 │
 ├── 📊 CURRENT REPORTS (Phase 4: 42 Strategies) ✅
-│   ├── BACKTEST_REPORT_DC_VOICE.ipynb             # Jupyter notebook with 8 charts embedded ⭐
-│   ├── BACKTEST_REPORT_DC_VOICE.html              # Standalone HTML (4.9 MB, self-contained) ⭐
-│   ├── BACKTEST_REPORT_DC_VOICE.md                # Markdown source (29 KB)
+│   ├── Taking_Profits_What_Actually_Works.ipynb             # Jupyter notebook with 8 charts embedded ⭐
+│   ├── Taking_Profits_What_Actually_Works.html              # Standalone HTML (4.9 MB, self-contained) ⭐
+│   ├── Taking_Profits_What_Actually_Works.md                # Markdown source (29 KB)
 │   ├── TECHNICAL_REPORT_COMPREHENSIVE.md          # Full technical reference (16,500 words)
 │   └── FACT_CHECK_REPORT_DC_VOICE.md              # Validation report (all checks passed)
 │
@@ -372,7 +372,7 @@ trim_strat_test/
    - Preserved all critical data and recommendations
    - Removed excessive technical detail
 
-4. **Voice Transformation** → Created BACKTEST_REPORT_DC_VOICE.md ✅
+4. **Voice Transformation** → Created Taking_Profits_What_Actually_Works.md ✅
    - 4,414 words (expanded from condensed version with narrative elements)
    - Full DC voice applied (conversational, direct, punchy, honest)
    - Narrative structure: leads with human question, shows discovery journey
@@ -390,7 +390,7 @@ trim_strat_test/
 - **New workflow (Session 6):** Technical (full) → Condense → Enhanced Tone Match → (Ready for Fact-Check)
 
 **Next Steps:**
-- Finance fact-checker validation on BACKTEST_REPORT_DC_VOICE.md
+- Finance fact-checker validation on Taking_Profits_What_Actually_Works.md
 - Apply any corrections from fact-checker
 - Final publication-ready version
 
@@ -589,19 +589,19 @@ Strategy mechanics (trim thresholds, reinvestment) matter LESS than what you own
 ### Three Publication Formats Available:
 
 **1. Jupyter Notebook (Best for Technical Sharing)**
-- **File:** `BACKTEST_REPORT_DC_VOICE.ipynb` (4.9 MB)
+- **File:** `Taking_Profits_What_Actually_Works.ipynb` (4.9 MB)
 - 22 cells (14 markdown + 8 embedded charts)
 - All visualizations display inline at perfect narrative points
 - Can export to PDF, share on GitHub, run interactively
 
 **2. Standalone HTML (Best for Web Sharing)**
-- **File:** `BACKTEST_REPORT_DC_VOICE.html` (4.9 MB)
+- **File:** `Taking_Profits_What_Actually_Works.html` (4.9 MB)
 - Self-contained with all 8 charts embedded as base64
 - Opens in any browser, no dependencies
 - Can print to PDF directly
 
 **3. Markdown Source (For Editing/GitHub)**
-- **File:** `BACKTEST_REPORT_DC_VOICE.md` (29 KB)
+- **File:** `Taking_Profits_What_Actually_Works.md` (29 KB)
 - Lightweight text version for editing
 - Chart references (images separate in /visualizations/)
 - Version control friendly
@@ -657,12 +657,12 @@ Strategy mechanics (trim thresholds, reinvestment) matter LESS than what you own
 - 100% data accuracy preserved through voice transformation
 
 **What's Ready:**
-- `BACKTEST_REPORT_DC_VOICE.md` ready for fact-checking
+- `Taking_Profits_What_Actually_Works.md` ready for fact-checking
 - Full technical documentation available for reference
 - Professional visualizations generated
 
 **Next Session Should Focus On:**
-- Finance fact-checker validation on BACKTEST_REPORT_DC_VOICE.md
+- Finance fact-checker validation on Taking_Profits_What_Actually_Works.md
 - Apply any corrections from fact-checker
 - Create final publication-ready version
 - Optional: Convert to Jupyter notebook format with embedded charts

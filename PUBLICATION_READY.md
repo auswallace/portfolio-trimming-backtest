@@ -3,7 +3,7 @@
 ## ✅ What You Have Right Now
 
 ### 1. **Jupyter Notebook** (Recommended for Technical Audiences)
-**File:** `BACKTEST_REPORT_DC_VOICE.ipynb` (4.9 MB)
+**File:** `Taking_Profits_What_Actually_Works.ipynb` (4.9 MB)
 
 **Contents:**
 - 22 total cells (14 markdown, 8 image cells)
@@ -29,7 +29,7 @@
 ---
 
 ### 2. **Standalone HTML** (Best for Web Sharing)
-**File:** `BACKTEST_REPORT_DC_VOICE.html` (4.9 MB)
+**File:** `Taking_Profits_What_Actually_Works.html` (4.9 MB)
 
 **Contents:**
 - Complete report with all 8 charts embedded as base64
@@ -46,7 +46,7 @@
 ---
 
 ### 3. **Markdown Source** (For GitHub/Editing)
-**File:** `BACKTEST_REPORT_DC_VOICE.md` (29 KB)
+**File:** `Taking_Profits_What_Actually_Works.md` (29 KB)
 
 **Contents:**
 - Pure markdown text (lightweight)
@@ -82,27 +82,27 @@ All charts are colorblind-friendly and publication-quality.
 ## 📄 How to Create PDF
 
 ### Option 1: From HTML (Easiest)
-1. Open `BACKTEST_REPORT_DC_VOICE.html` in Chrome/Edge
+1. Open `Taking_Profits_What_Actually_Works.html` in Chrome/Edge
 2. Right-click → Print (or Cmd/Ctrl+P)
 3. Destination: "Save as PDF"
 4. Options:
    - Background graphics: ON
    - Margins: Default
    - Scale: 100%
-5. Save as `BACKTEST_REPORT_DC_VOICE.pdf`
+5. Save as `Taking_Profits_What_Actually_Works.pdf`
 
 ### Option 2: From Jupyter Notebook (Best Quality)
-1. Open `BACKTEST_REPORT_DC_VOICE.ipynb` in Jupyter
+1. Open `Taking_Profits_What_Actually_Works.ipynb` in Jupyter
 2. `File → Download as → PDF via LaTeX`
 3. Requires LaTeX installed (MacTeX on Mac, MiKTeX on Windows)
 
 ### Option 3: Using Command Line (If you have tools)
 ```bash
 # If you have wkhtmltopdf installed:
-wkhtmltopdf BACKTEST_REPORT_DC_VOICE.html BACKTEST_REPORT_DC_VOICE.pdf
+wkhtmltopdf Taking_Profits_What_Actually_Works.html Taking_Profits_What_Actually_Works.pdf
 
 # If you have pandoc installed:
-pandoc BACKTEST_REPORT_DC_VOICE.md -o BACKTEST_REPORT_DC_VOICE.pdf --pdf-engine=xelatex
+pandoc Taking_Profits_What_Actually_Works.md -o Taking_Profits_What_Actually_Works.pdf --pdf-engine=xelatex
 ```
 
 ---
@@ -180,7 +180,7 @@ pandoc BACKTEST_REPORT_DC_VOICE.md -o BACKTEST_REPORT_DC_VOICE.pdf --pdf-engine=
 ## 🎯 Recommended Publication Strategy
 
 ### Phase 1: Quick Win (Today)
-1. Upload `BACKTEST_REPORT_DC_VOICE.ipynb` to GitHub
+1. Upload `Taking_Profits_What_Actually_Works.ipynb` to GitHub
 2. Create PDF from HTML for archiving
 3. Share on Twitter/LinkedIn with key finding
 
