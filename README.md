@@ -2,6 +2,8 @@
 
 **Does taking profits beat holding forever? I backtested 13 strategies across 10 years to find out.**
 
+> **📖 This README is the complete research report.** All findings, visualizations, and analysis are presented below. Scroll down for results, methodology, and insights.
+
 ---
 
 ## 🎯 Key Findings (TL;DR)
@@ -332,25 +334,25 @@ Raw CSV Data
 
 ### Quick Start
 ```bash
-git clone https://github.com/yourusername/portfolio-trimming-backtest
+git clone https://github.com/auswallace/portfolio-trimming-backtest
 cd trim_strat_test
 pip install -r requirements.txt
 
 # Run Phase 3 backtest (realistic portfolio)
 python src/backtest/run_backtest_index_focus.py
 
-# View research report
-jupyter notebook RESEARCH_REPORT_FINAL_PUBLICATION_READY.ipynb
+# View results
+cat results_index_focus/index_focus_results.csv
 ```
 
 ### Prerequisites
 - Python 3.9+
-- pandas, numpy, matplotlib, seaborn, yfinance, jupyter
+- pandas, numpy, matplotlib, seaborn, yfinance
 
 ### Output Files
-- `results_index_focus/index_focus_results.csv` - 13 strategy metrics
+- `results_index_focus/index_focus_results.csv` - Complete metrics for all 42 strategies
 - `results_index_focus/index_focus_output.txt` - Detailed trade logs
-- `visualizations/*.png` - 7 professional charts (300 DPI)
+- `visualizations/*.png` - 19 professional charts (300 DPI)
 
 ---
 
@@ -374,9 +376,10 @@ trim_strat_test/
 │   ├── finance-fact-checker.md            # QA validator
 │   └── assumption-revision-agent.md       # Editor
 │
-├── results_index_focus/                   # Backtest outputs
-├── visualizations/                        # Charts (300 DPI)
-└── RESEARCH_REPORT_FINAL_PUBLICATION_READY.ipynb  # Final report ✅
+├── results_index_focus/                   # Backtest outputs (CSV files)
+├── visualizations/                        # 19 charts (300 DPI PNG)
+├── notebooks/                             # Code structure (see notebooks/README.md)
+└── README.md                              # Main research report ⭐
 ```
 
 ---
@@ -463,6 +466,6 @@ MIT License - See LICENSE file for details
 
 **⭐ If you found this research valuable, please star the repo!**
 
-**📊 [Read the full research report →](RESEARCH_REPORT_FINAL_PUBLICATION_READY.ipynb)**
+**📊 Want the data?** Check out `results_index_focus/index_focus_results.csv` for complete metrics on all 42 strategies.
 
 **💬 Questions? Open an issue or reach out!**

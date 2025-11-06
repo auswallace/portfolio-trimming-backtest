@@ -1,25 +1,31 @@
 # Notebooks Directory
 
-## Current Notebook (Use This One)
+## 📖 Main Research Report
 
-**`COMPREHENSIVE_BACKTEST_REPORT.ipynb`** - Publication-ready comprehensive analysis
+**The complete research report is in the root [`README.md`](../README.md)** - This renders perfectly on GitHub and contains:
+- Complete analysis narrative
+- All 19 visualizations (embedded and viewable)
+- Results tables for all 42 strategies
+- Methodology, findings, and insights
+- Professional presentation
+
+**→ [Read the Main Report](../README.md)**
+
+---
+
+## Jupyter Notebooks (Code Structure Only)
+
+The notebooks in this directory contain code structure but **have not been executed**. They were used to organize the analysis workflow but do not contain output.
+
+**`COMPREHENSIVE_BACKTEST_REPORT.ipynb`** - Analysis code structure
 
 - **Strategies**: 42 total (5 trim types × 6 reinvestment modes + baseline)
 - **Updates**: UPDATE 1-3 complete
   - UPDATE 1: Momentum & volatility strategies, advanced metrics
   - UPDATE 2: Comprehensive notebook with 8+ charts
   - UPDATE 3: Cost/tax modeling, validation, fact-checking
-- **Quality**: 9.5/10 (fact-checked by senior quant analyst agent)
-- **Cells**: 37 (includes chart insights and technical sections)
-- **Last Updated**: 2025-11-06
-
-### Key Features:
-✅ Cost & tax toggles available
-✅ All metrics validated (100% accuracy)
-✅ Statistical significance discussed
-✅ Assumptions transparently disclosed
-✅ 6 chart insights with actionable takeaways
-✅ Publication-ready for GitHub/blog/portfolio
+- **Status**: Code cells present, outputs not executed
+- **Note**: All results, charts, and analysis are available in root README.md and `/visualizations/` directory
 
 ---
 
