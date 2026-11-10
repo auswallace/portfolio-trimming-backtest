@@ -1,320 +1,286 @@
-# I Tested 42 Ways to Take Profits. Here's What Actually Worked.
+# A 52% backtest win that did not hold
 
-**A 10-year quantitative backtest with $100,000 across 42 portfolio management strategies.**
+An audit of my own backtest result, and the test I should have run first.
 
-> **TL;DR:** Volatility-based trimming beat buy-and-hold by 52% ($1.05M vs $689k). Traditional profit-taking achieved near-parity with better risk metrics. Cash holding strategies destroyed returns (-30% to -60%).
+In 2025 I tested 42 ways to take profits in a stock portfolio. One strategy beat buy-and-hold by 52%.
+An AI fact-checker gave the report 8.5 out of 10. I published it.
 
----
+A year later I checked where the 52% came from. The answer was not in the report.
+This repository shows the audit, the bugs I found in my engine, and a better test.
 
-## 🎯 Key Finding
+## The short version
 
-**The optimal strategy depends on what you own and how you manage risk.**
+- **The claim:** "Volatility-based trimming beat buy-and-hold by 52% ($1.05M against $689k)."
+- **The numbers are correct.** The corrected engine gives the same result to the dollar.
+- **The explanation was wrong.** The strategy did not take profits. It never trimmed its largest winner.
+  It sold index funds in the 2020 crash and bought single stocks, mostly TSLA.
+- **The result is fragile.** A different multiplier gives a loss against buy-and-hold.
+- **The AI fact-check did not catch this.** It compared the report with the results file. It did not ask what caused the results.
+- **The better test** uses 17,000 random portfolios with failed companies included. The strategy wins in 48.4% of them. It is a coin flip.
 
-- **Best Strategy:** Volatility-2.5x (pro-rata) - **26.98% CAGR** (52% better than buy-and-hold)
-- **Traditional Trimming:** Trim@+100% (pro-rata) - **21.36% CAGR** (near-parity with buy-and-hold, better risk metrics)
-- **Buy-and-Hold Baseline:** **21.69% CAGR** (0.90 Sharpe, -46.3% max drawdown)
+This is a study of a method. It is not investment advice.
 
-**Test Period:** January 2015 to November 2024 (2,477 trading days, 9.83 trading years)
-**Starting Capital:** $100,000
-**Strategies Tested:** 42 trimming approaches + 1 buy-and-hold baseline
-**Ending Values:** $160k (worst) to $1,046k (best) depending on strategy
+## 1. The claim
 
----
+The original portfolio was $100,000 in six positions, from January 2015 to November 2024:
+SPY 30%, QQQ 20%, VOO 10%, AAPL 15%, MSFT 15%, TSLA 10%.
 
-## 📊 Read the Full Report
+The strategy "Volatility-2.5x" has one rule.
+When the 30-day volatility of a position is above 2.5 times its median volatility, sell 20% of that position.
+Put the proceeds back into all positions in proportion to their value.
 
-### **Option 1: Jupyter Notebook** (Recommended for Technical Audiences)
-**File:** [`Taking_Profits_What_Actually_Works.ipynb`](Taking_Profits_What_Actually_Works.ipynb)
-- 2,194 words with 8 embedded charts
-- Interactive format, can export to PDF
-- Best for GitHub viewing and technical sharing
+| | Final value | Yearly return | Sharpe ratio | Max drawdown |
+|---|---|---|---|---|
+| Buy-and-hold | $688,711 | 21.69% | 0.90 | -46.3% |
+| Volatility-2.5x | $1,046,173 | 26.98% | 0.86 | -62.4% |
 
-### **Option 2: Standalone HTML** (Best for Web Sharing)
-**File:** [`Taking_Profits_What_Actually_Works.html`](Taking_Profits_What_Actually_Works.html)
-- Self-contained with all charts embedded
-- Opens in any browser, no dependencies
-- Print to PDF directly from browser
+![Portfolio value for the two strategies](charts/01_value.png)
 
-### **Option 3: Mobile-Optimized HTML** (Best for iPhone/Mobile)
-**File:** [`Taking_Profits_What_Actually_Works_MOBILE.html`](Taking_Profits_What_Actually_Works_MOBILE.html)
-- Mobile-responsive design, perfect for texting/AirDropping
-- Minimal table of contents (18 sections)
-- All 8 charts embedded, optimized for mobile Safari
-- Ideal for sharing with friends on iPhone
+The original report gave this reason: the rule let the winners run, raised cash before the 2020 crash, and bought at the bottom.
 
-### **Option 4: Markdown Source** (For Editing)
-**File:** [`Taking_Profits_What_Actually_Works.md`](Taking_Profits_What_Actually_Works.md)
-- Lightweight text version
-- Charts in `/visualizations/` folder
-- Easy to edit and version control
+## 2. The audit
 
----
+Each check is in `src/audit.py`. The numbers are in `results/audit.json`.
 
-## 🔬 What Makes This Research Different
+### Check 1: Which positions did the strategy trim?
 
-### 1. **Comprehensive Testing**
-42 strategies tested (not just 2-3):
-- 5 trimming methodologies (fixed thresholds, volatility-based, momentum-guided)
-- 6 reinvestment modes (pro-rata, SPY, DRIP, yield-volatility, dip-buying, cash)
-- All combinations systematically tested
+It made 47 trims. None was on TSLA.
 
-### 2. **Real Historical Data**
-- Yahoo Finance data (2015-2024)
-- 6 real tickers: SPY, QQQ, VOO, AAPL, MSFT, TSLA
-- Index-focused portfolio (60% index funds, 40% individual stocks)
-- No synthetic/mock data
+![Number of trims for each position](charts/03_trims.png)
 
-### 3. **Statistical Validation**
-- All metrics independently verified (<0.001% error)
-- Bootstrap confidence intervals (1,000 iterations)
-- T-tests for statistical significance (Volatility-2.5x: p<0.01)
-- Fact-checked by independent agent (8.5/10 quality rating)
+All trims were in 2018 (18) and 2020 (29).
+The reason is in the rule. The rule compares a position with its own usual volatility.
+In a market crash, index fund volatility goes far above its usual level.
+TSLA is volatile at all times, so its ratio stayed below 2.5.
 
-### 4. **Honest Discovery Journey**
-Report shows the full research arc:
-- **Phase 1:** Buy-and-hold crushed trimming ($5.4M vs $4.3M) - NVDA trap
-- **Phase 2:** "Smart" dip-buying still underperformed
-- **Phase 3:** Realistic portfolio flipped results (near-parity)
-- **Phase 4:** Volatility-based strategies breakthrough (+52% vs buy-and-hold)
+### Check 2: Where did the money go?
 
-### 5. **Accessible + Rigorous**
-- DC voice (conversational, direct, engaging)
-- "In Plain English" translations of complex concepts
-- Strategy personas ("The Patient Investor," "The Risk Controller")
-- 100% data accuracy preserved
+The proceeds went back pro-rata, so each trim of an index fund bought more of the single stocks.
+The strategy held no cash at any time.
 
----
+- The TSLA share count went to 3.77 times its start value.
+- TSLA was 22% of the strategy portfolio before the 2020 crash, and 49% four months later.
+- TSLA reached 77% of the portfolio in November 2021. In buy-and-hold it was 41% on the same date.
+- At the end, the three index funds were 10% of the strategy portfolio. In buy-and-hold they were 34%.
 
-## 📈 Breakthrough Finding
+![TSLA share of the portfolio for the two strategies](charts/02_tsla_weight.png)
 
-**Volatility-Based Trimming Outperformed Buy-and-Hold**
+So the strategy was not "take profits". It was "sell index funds in a crash and buy single stocks".
+That moved the portfolio into TSLA before the large rise in the TSLA price in 2020 and 2021.
+It also explains the larger drawdown and the lower Sharpe ratio. The portfolio had more risk, not more skill.
 
-Traditional thinking: "Never sell winners."
+### Check 3: Does the win stay without TSLA?
 
-**But the data showed:**
-- Volatility-2.5x (pro-rata): **$1,046,173** final value (26.98% CAGR)
-- Buy-and-Hold: **$688,711** final value (21.69% CAGR)
-- **Difference: +$357k (52% better)**
+I removed TSLA and gave its weight to the other five positions.
 
-**Why it worked:**
-1. High thresholds during bull markets let winners run (TSLA: 250-400% gains required before trim)
-2. Volatility spikes triggered lower thresholds before crashes (raised cash in Dec 2019-Jan 2020)
-3. Cash deployed at March 2020 bottom (SPY $220, TSLA $90)
-4. 2020-2021 recovery multiplied recently deployed capital
+| Five positions, no TSLA | Final value | Sharpe ratio | Max drawdown |
+|---|---|---|---|
+| Buy-and-hold | $580,686 | 0.94 | -30.1% |
+| Volatility-2.5x | $690,876 | 0.97 | -32.1% |
 
-**Trade-off:** -62.4% max drawdown (vs -46.3% buy-and-hold). Higher returns, higher volatility.
+The win falls from 52% to 19%. So most of the win came through TSLA, but not all of it.
+The part that stays is the same move: out of index funds and into AAPL and MSFT, in a decade when those two beat the index.
+One portfolio cannot show if that is a real effect or luck. Section 4 tests it.
 
----
+### Check 4: Does the win stay when one setting changes?
 
-## 💡 Who Should Use Which Strategy
-
-### **Aggressive Investors** (High Risk Tolerance)
-**Recommendation:** Volatility-2.5x (pro-rata)
-- 26.98% CAGR (26.13% after-tax)
-- Accept -62% drawdowns
-- Best for tax-deferred accounts (IRA, 401k)
+![Final value when one setting changes](charts/04_tests.png)
 
-### **Moderate Investors** (Balanced Risk-Return)
-**Recommendation:** Trim@+100% or Trim@+150% (pro-rata)
-- 21.36% CAGR (21.01-21.16% after-tax)
-- Better risk metrics than buy-and-hold (0.94 vs 0.90 Sharpe)
-- 5-6% smaller max drawdowns (-40.8% vs -46.3%)
+- With a multiplier of 1.5, the strategy ends at $541,437. That is below buy-and-hold.
+- Without the trims from February to June 2020, it ends at $852,103. One period gave about half of the win.
+- With trades on the day after the signal, it ends at $1,038,336. The same-day trade was not the problem.
 
-### **Conservative Investors** (Capital Preservation)
-**Recommendation:** Trim@+100% (yield-volatility)
-- 20.54% CAGR
-- **Lowest max drawdown:** -35.1% (11% better than buy-and-hold)
-- Psychological benefit reduces panic-selling temptation
+I tested 42 strategies and put the best one in the headline.
+With 42 tries on one portfolio and one period, a large win for one of them is not a surprise.
 
----
+### Check 5: Are the risk numbers correct?
 
-## ⚠️ What DOESN'T Work
+No. I found three bugs in the original engine (`original/run_backtest_index_focus.py`).
 
-### **Cash Holding Strategies: Catastrophic**
-- Trim@+150% (cash): $575k final value (16% below buy-and-hold)
-- Opportunity cost: $225k lost waiting for dips
-- **Lesson:** Proceeds must be reinvested immediately
+| Bug | Effect |
+|---|---|
+| For strategies that hold cash, the engine added the final cash balance to all days. | The risk numbers of 28 of the 42 strategies can be wrong. See the table below. |
+| The report said the Sharpe ratio used a 2% risk-free rate. The code used 0%. | With 2%, buy-and-hold is 0.82 and the strategy is 0.80. |
+| The "yield" mode set a 4% T-bill rate and did not use it. | The cash earned nothing. |
+
+The effect of the cash bug on four strategies:
+
+| Strategy | Sharpe, original | Sharpe, corrected | Max drawdown, original | Max drawdown, corrected |
+|---|---|---|---|---|
+| Trim@+50% (cash) | 0.48 | 0.98 | -24.7% | -26.1% |
+| Trim@+100% (cash) | 0.61 | 0.96 | -30.0% | -32.8% |
+| Trim@+100% (yield-volatility) | 0.95 | 0.97 | -35.1% | -35.1% |
+| Volatility-2.5x (yield-volatility) | 0.78 | 0.87 | -59.7% | -44.4% |
+
+The original report said that strategies with cash "destroyed returns".
+On return, that is correct: Trim@+50% (cash) ends at $443,061.
+On risk, the bug hid the other side. With the correct cash record, its Sharpe ratio is 0.98, above the 0.90 of buy-and-hold.
+
+## 3. What the AI fact-check did and did not do
+
+The original project used four AI agents. One of them was a fact-checker.
+Its report is in `original/FACT_CHECK_REPORT_DC_VOICE.md`.
+
+What it did:
+
+- It compared each number in the report with the results file.
+- It recalculated the yearly return from the final values.
+- It examined the wording of the assumptions.
+- Its verdict was "Pass with Minor Revisions", with a rating of 8.5 out of 10.
+
+What it did not do:
+
+- It did not read the list of trades.
+- It did not ask which position made the money.
+- It did not read the engine code, so it did not find the three bugs.
 
-### **Dip-Buying: Even "Smart" Market Timing Fails**
-- Successfully timed 6-9 dips at 5% discounts
-- Still underperformed immediate reinvestment by $20k-$69k
-- Average wait: 4.2 months (SPY gained 15% during typical wait)
-- **Lesson:** Time in market > timing the market
+The agent did a consistency check: does the report agree with the results?
+The flaw needed a cause check: why are the results what they are?
+A report can pass the first check and fail the second.
+This is one case, not a study of AI fact-checkers. But the two questions are different, and I asked only the first.
 
-### **SPY Rotation: Don't Sell Winners to Buy Index**
-- Rotating profits from high-growth stocks (TSLA 34% CAGR) to SPY (13% CAGR)
-- Cost 10-20% of returns
-- **Lesson:** Pro-rata reinvestment maintains exposure to winners
+## 4. The better test: 17,000 random portfolios
+
+One portfolio and one period give one story. So I asked the same question many times.
 
----
-
-## 📋 Methodology Summary
-
-### Portfolio (Illustrative Example)
-- SPY: 30% ($30,000)
-- QQQ: 20% ($20,000)
-- VOO: 10% ($10,000)
-- AAPL: 15% ($15,000)
-- MSFT: 15% ($15,000)
-- TSLA: 10% ($10,000)
-
-**Note:** 60% index funds, 40% individual stocks. Not optimized, but representative of conservative investor allocation.
-
-### Strategies Tested
-1. **Fixed Thresholds:** Trim 20% at +50%, +100%, +150% gains
-2. **Volatility-Based:** Dynamic thresholds (1.5x, 2.0x, 2.5x multipliers)
-3. **Momentum-Guided:** Only trim with +100% gain AND negative MA20/MA50 slopes
-4. **Reinvestment Modes:** Pro-rata, SPY, DRIP, yield-volatility, dip-buy-5%, cash
-
-### Metrics Tracked
-- CAGR (trading-year basis: 9.83 years)
-- Sharpe ratio (2% risk-free rate)
-- Sortino ratio (downside-only volatility)
-- Maximum drawdown
-- Rolling 3-year CAGR/drawdown
-- Bootstrap 95% confidence intervals
-
----
-
-## 🤖 AI-Assisted Research Methodology
-
-**Full Disclosure:** This research leveraged AI assistance - but not in the way you might think.
-
-### The Innovation: Multi-Agent Validation System
-
-Rather than using AI to "do the analysis," I built a **custom multi-agent workflow** to ensure accuracy and scale:
-
-1. **Research Report Generator Agent** - Transforms raw CSV backtest results into comprehensive technical reports with professional visualizations
-2. **Personal Tone Matcher Agent** - Converts technical writing into accessible narrative while preserving 100% data accuracy
-3. **Finance Fact-Checker Agent** - Independently validates ALL metrics, recalculates from source data, and interrogates assumptions
-4. **Assumption Revision Agent** - Applies surgical corrections based on fact-checker feedback
-
-### What This Demonstrates
-
-**Data Analytics:**
-- Custom Python backtesting framework (1,200+ lines of code)
-- Statistical validation (bootstrap CIs, t-tests, rolling metrics)
-- Professional visualizations (matplotlib/seaborn, 300 DPI, colorblind-friendly)
-
-**Financial Concepts:**
-- Portfolio construction (index funds vs individual stocks)
-- Risk-adjusted returns (Sharpe, Sortino, max drawdown)
-- Behavioral finance (loss aversion, disposition effect)
-- Tax efficiency and transaction cost modeling
-
-**AI Engineering:**
-- Multi-agent system design with distinct responsibilities
-- Fact-checking loop to catch hallucinations/errors
-- Assumption interrogation framework (questions "realistic portfolio" claims)
-- Voice transformation that preserves 100% data integrity
-
-### Accuracy Safeguards
-
-Every number in this report has been:
-1. **Generated** from real historical data (Yahoo Finance CSV files)
-2. **Calculated** by custom Python code (deterministic, reproducible)
-3. **Validated** by independent fact-checker agent (<0.001% error tolerance)
-4. **Cross-checked** against source CSVs (all metrics recalculated from scratch)
-
-**Result:** 8.5/10 quality rating from fact-checker, all corrections applied, 100% data accuracy verified.
-
-### Why This Matters
-
-This project demonstrates the **emerging skill** of leveraging AI safely in quantitative analysis:
-- AI assists with scale (42 strategies, 21 charts, 16,500-word technical report)
-- Human judgment drives methodology (portfolio construction, parameter choices, interpretation)
-- Multi-agent validation prevents errors (fact-checker caught 8 issues in first draft)
-- Transparency about limitations (bull market bias, frictionless assumptions, illustrative parameters)
-
-**The future of data analysis isn't "AI or human" - it's building systems where AI amplifies human expertise while maintaining rigor.**
-
----
-
-## 📂 Technical Documentation
-
-**Deep Dive:**
-- [`TECHNICAL_REPORT_COMPREHENSIVE.md`](TECHNICAL_REPORT_COMPREHENSIVE.md) - Full methodology (16,500 words)
-- [`FACT_CHECK_REPORT_DC_VOICE.md`](FACT_CHECK_REPORT_DC_VOICE.md) - Independent validation
-
-**Code:**
-- [`run_backtest_index_focus.py`](run_backtest_index_focus.py) - Backtest engine
-- [`results_index_focus/`](results_index_focus/) - Raw CSV results
-
-**Visualizations:**
-- [`visualizations/`](visualizations/) - 21 professional charts (300 DPI, colorblind-friendly)
-
-**Publishing Guide:**
-- [`PUBLICATION_READY.md`](PUBLICATION_READY.md) - How to share, convert formats
-
----
-
-## 🎓 Limitations & Caveats
-
-### **Bull Market Bias**
-Test period (2015-2024) was predominantly bullish:
-- S&P 500: +229% (+13.0% CAGR)
-- Missing bear market testing (2000-2002, 2007-2009)
-- Trimming would likely outperform more in sustained bear markets
-
-### **Frictionless Assumptions**
-Current results exclude transaction costs and taxes (upper bound):
-- Expected tax drag: 0.2-0.9% for low-frequency, 1.5-4.5% for high-frequency
-- Transaction costs: <0.3% annual drag for most strategies
-- Volatility-2.5x retains majority of alpha after taxes ($975k vs $689k)
-
-### **Illustrative Parameters**
-Trim thresholds (+50%/+100%/+150%), trim amount (20%), portfolio allocation (60/40) chosen for clarity, not optimization. Optimal values may differ.
-
-### **Survivorship Bias**
-Portfolio consists of 6 survivors (no bankruptcies). Understates trimming's relative benefit in portfolios with failures.
-
----
-
-## 🚀 Citation & Sharing
-
-If you use or reference this research:
-
-**APA Format:**
-```
-Wallace, A. (2025). Portfolio Trimming Strategies: A Comprehensive Quantitative Analysis
-(2015-2024 Backtest). Retrieved from https://github.com/[your-username]/trim_strat_test
+- **Portfolios:** 1,000 random portfolios for each start year. Each has 6 positions with random weights.
+- **Periods:** 17 start years, from 2003 to 2019. Each gives one 5-year window. That is 17,000 cases.
+- **Companies:** a portfolio can only hold companies that were in the S&P 500 on its start date.
+  A list from today knows which companies won. A list from the start date does not.
+- **Failed companies stay in.** When a company leaves the market, its position stays at the last price to the end of the window.
+  In each window, 22 to 49 of the available companies left the market.
+- **Trades** occur on the day after the signal. Proceeds go back pro-rata.
+
+The code is in `src/random_portfolios.py`. The numbers are in `results/random_portfolios_finsaber.json`.
+
+### Result
+
+A case with no trim is equal to buy-and-hold. The rates below use the cases with one trim or more.
+
+| Rule | Cases with a trim | Higher return than buy-and-hold | Higher Sharpe ratio | Median difference in yearly return |
+|---|---|---|---|---|
+| Volatility-2.5x | 15,511 | 48.4% | 45.9% | -0.03 points |
+| Trim at +100% | 15,030 | 49.9% | 57.0% | 0.00 points |
+
+- **Volatility-2.5x is a coin flip, with a small cost.** It wins on return in 48.4% of the cases. The mean difference is -0.20 points a year.
+- **Half of the cases are within 1 point a year of buy-and-hold.** In 9 of 10 cases the difference is between -4.4 and +3.7 points.
+- **My original result was in the top 2.3%.** The original portfolio won by 5.3 points a year over its 10 years. Only 2.3% of the random 5-year cases won by that much.
+- **Trim at +100% does not change the return.** It gives a higher Sharpe ratio in 57.0% of the cases. That is a small effect on risk, and the test does not include tax, which works against each trim.
+
+![Difference in yearly return for all random cases with a trim](charts/05_random_portfolios_finsaber.png)
+
+### The start year decides the result
+
+| Start year | Volatility-2.5x wins | Median difference | Trim at +100% wins | Median difference |
+|---|---|---|---|---|
+| 2003 | 55.7% | +0.05 | 40.3% | -0.12 |
+| 2004 | 55.2% | +0.16 | 57.0% | +0.08 |
+| 2005 | 43.8% | -0.29 | 53.7% | +0.03 |
+| 2006 | 46.4% | -0.17 | 57.4% | +0.03 |
+| 2007 | 50.2% | +0.01 | 57.6% | +0.04 |
+| 2008 | 52.9% | +0.22 | 47.3% | -0.01 |
+| 2009 | 38.2% | -0.35 | 51.7% | +0.02 |
+| 2010 | 61.4% | +0.04 | 56.8% | +0.05 |
+| 2011 | 53.7% | +0.04 | 41.2% | -0.07 |
+| 2012 | 51.5% | +0.01 | 52.9% | +0.02 |
+| 2013 | 63.4% | +0.15 | 49.1% | -0.01 |
+| 2014 | 65.1% | +0.22 | 47.4% | -0.01 |
+| 2015 | 63.0% | +0.22 | 32.5% | -0.09 |
+| 2016 | 39.6% | -0.30 | 35.1% | -0.12 |
+| 2017 | 37.5% | -0.50 | 44.5% | -0.05 |
+| 2018 | 28.9% | -1.01 | 66.8% | +0.11 |
+| 2019 | 31.2% | -0.88 | 61.3% | +0.10 |
+
+The four windows that include the 2020 crash (start years 2016 to 2019) are the worst for Volatility-2.5x.
+In those windows the rule wins in 29% to 40% of the cases.
+That is the same crash that gave my original portfolio its win.
+In a crash, the rule moves money out of the positions with the largest rise in volatility.
+For most portfolios that move cost money. In my portfolio it moved money into TSLA.
+
+![Difference in yearly return against the size of the largest position](charts/06_concentration_finsaber.png)
+
+### Is the price data good?
+
+The prices come from the [FINSABER dataset](https://huggingface.co/datasets/waylonli/FINSABER-data) on Hugging Face.
+It has 1,017 symbols from 2000 to 2024, and 334 of them stopped trading before the middle of 2024.
+The dataset page does not name the price source, so I made two checks.
+
+- **Against Yahoo Finance** (`src/compare_sources.py`): 102 symbols are in both sources. For 100 of them, the daily returns have a correlation of 0.999 or more.
+  For 96 of them, the total growth from 2012 to 2024 agrees within 5%. The 6 others are companies with a spin-off.
+- **Bad series:** some symbols have bad rows, or a second company uses the symbol after the first one left the market.
+  One symbol had a price of 7.73 on one day and 141,630 on the next. I removed 37 symbols and cut 59 short. The rules are in `repair_finsaber`.
+  Before this repair the win rate of Volatility-2.5x was 48.9%. After it, 48.4%.
+
+The test covers 384 to 487 companies for each start year. The index had about 500, so the cover is 78% to 96%.
+
+### Cross-check with a second universe
+
+I ran the same test on Yahoo Finance prices for 103 large companies from the end of 2014 (`src/universe.py`), for start years 2015 to 2021.
+This list is compiled by hand and has no failed companies.
+Volatility-2.5x won on return in 42.9% of 6,730 cases. The median difference was -0.14 points a year.
+In this test my original portfolio won by 1.8 to 21.8 points a year in the windows that start from 2015 to 2020.
+The result agrees with the main test: the rule has no edge, and my portfolio was an exception.
+
+## Five checks for a backtest result
+
+1. **Read the trades.** Which positions did the strategy trade, and when? Does that agree with the explanation?
+2. **Follow the weights.** Did one position become most of the portfolio?
+3. **Remove the best position.** Does the result stay?
+4. **Change one setting.** Does the result stay with a different parameter, or without the best period?
+5. **Test many portfolios.** One portfolio is one story. Many portfolios give a rate.
+
+## Run it
+
+Python 3.10 or later is necessary.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+python tests/test_engine.py                  # 11 checks
+python src/audit.py                          # section 2, writes results/audit.json and charts
+
+python src/download_finsaber.py              # prices for section 4, about 250 MB from Hugging Face
+python src/random_portfolios.py finsaber     # section 4, about 2 minutes
+
+python src/download_universe.py              # prices for the cross-check, from Yahoo Finance
+python src/random_portfolios.py yahoo        # the cross-check
+python src/compare_sources.py                # FINSABER against Yahoo
 ```
 
-**BibTeX:**
-```bibtex
-@techreport{wallace2025trimming,
-  title={Portfolio Trimming Strategies: A Comprehensive Quantitative Analysis},
-  author={Wallace, Austin},
-  year={2025},
-  type={Quantitative Backtest},
-  note={42 strategies tested, 2,477 trading days, $100,000 initial capital}
-}
+The price files for section 2 are in `data/`. All tools and data are free. No account and no key are necessary.
+
+## Layout
+
+```
+src/engine.py              the engine: signals, simulation, metrics
+src/audit.py               the five checks of section 2
+src/random_portfolios.py   the test of section 4
+src/download_finsaber.py   price download for section 4
+src/universe.py            the stock list for the cross-check
+src/download_universe.py   price download for the cross-check
+src/compare_sources.py     FINSABER prices against Yahoo prices
+src/plots.py               chart style
+data/sp500_members.csv     S&P 500 membership dates
+tests/test_engine.py       checks for the engine
+results/                   the numbers in this file
+charts/                    the charts in this file
+original/                  the 2025 engine, report and fact-check, not changed
 ```
 
----
+## Limits
 
-## 📧 Contact & Questions
+- **No costs and no tax.** All results are before trading costs and capital gains tax. Tax makes each trim rule worse.
+- **Two trim rules only.** Section 4 tests Volatility-2.5x and Trim at +100%. It does not test the 40 other strategies of the original report.
+- **5-year windows that overlap.** The 17 windows share years, so the 17,000 cases are not independent.
+- **Cover of the index is 78% to 96%.** The companies that are not in the price file are not a random sample.
+- **A failed company stays at its last price.** For a bankruptcy that is near zero, which is correct. For an acquisition, the cash stays idle to the end of the window.
+- **The price source of FINSABER is not known.** The check against Yahoo covers large companies from 2012. It does not cover the failed companies.
+- **Not advice.** This project tests a method. It does not tell you what to buy or sell.
 
-Found an error? Have questions? Want to discuss results?
+## Data sources
 
-- **GitHub Issues:** [Open an issue](../../issues)
-- **Discussions:** [Start a discussion](../../discussions)
-- **Email:** [your-email@example.com]
-
----
-
-## 📜 License
-
-This research is provided for educational purposes. Results are based on historical data and do not guarantee future performance.
-
-**Disclaimer:** Not financial advice. Consult a qualified financial advisor before making investment decisions. Past performance does not indicate future results.
-
----
-
-**Last Updated:** November 6, 2025
-**Version:** 2.0 (42 Strategies, Session 6)
-**Status:** ✅ Publication-Ready
-
----
-
-**⭐ If this research helped you, please star this repo and share!**
+- **FINSABER price file:** [waylonli/FINSABER-data](https://huggingface.co/datasets/waylonli/FINSABER-data) on Hugging Face, Apache-2.0 license. Not in this repository. `src/download_finsaber.py` gets it.
+- **S&P 500 membership dates:** `data/sp500_members.csv` is `sp500_ticker_start_end.csv` from [fja05680/sp500](https://github.com/fja05680/sp500), MIT license, copyright (c) 2019-2020 Farrell J. Aultman.
+- **Yahoo Finance prices:** through the `yfinance` package. The six files in `data/` are the files of the original project.

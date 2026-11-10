@@ -1,0 +1,940 @@
+{
+  "tickers_in_both": 102,
+  "period": [
+    "2012-01-03",
+    "2024-12-31"
+  ],
+  "median_return_correlation": 1.0,
+  "tickers_with_correlation_below_0.98": [
+    "MDLZ"
+  ],
+  "median_growth_ratio": 1.0,
+  "tickers_with_growth_gap_above_5pct": [
+    "DD",
+    "HON",
+    "KMB",
+    "MDLZ",
+    "MET",
+    "T"
+  ],
+  "by_ticker": [
+    {
+      "ticker": "AAPL",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 20.213,
+      "growth_finsaber": 20.213,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "ABBV",
+      "days": 3020,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 8.216,
+      "growth_finsaber": 8.216,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "ABT",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 5.396,
+      "growth_finsaber": 5.411,
+      "growth_ratio": 1.003
+    },
+    {
+      "ticker": "ACN",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 8.419,
+      "growth_finsaber": 8.419,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "ADP",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 8.23,
+      "growth_finsaber": 8.23,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "AIG",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 3.908,
+      "growth_finsaber": 3.908,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "AMGN",
+      "days": 3270,
+      "return_correlation": 0.9999,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 5.722,
+      "growth_finsaber": 5.721,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "AMT",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 4.096,
+      "growth_finsaber": 4.098,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "AMZN",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 24.509,
+      "growth_finsaber": 24.509,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "AXP",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 7.374,
+      "growth_finsaber": 7.374,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "BA",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 2.914,
+      "growth_finsaber": 2.914,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "BAC",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 9.475,
+      "growth_finsaber": 9.477,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "BIIB",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 1.347,
+      "growth_finsaber": 1.347,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "BKNG",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 10.332,
+      "growth_finsaber": 10.332,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "BLK",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 7.91,
+      "growth_finsaber": 7.911,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "BMY",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 2.442,
+      "growth_finsaber": 2.442,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "C",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 3.255,
+      "growth_finsaber": 3.255,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "CAT",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 5.424,
+      "growth_finsaber": 5.424,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "CL",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 2.698,
+      "growth_finsaber": 2.698,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "CMCSA",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 3.999,
+      "growth_finsaber": 3.999,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "COF",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 5.084,
+      "growth_finsaber": 5.109,
+      "growth_ratio": 1.005
+    },
+    {
+      "ticker": "COP",
+      "days": 3270,
+      "return_correlation": 0.9999,
+      "days_with_return_gap_above_1pct": 2,
+      "growth_yahoo": 2.742,
+      "growth_finsaber": 2.725,
+      "growth_ratio": 0.994
+    },
+    {
+      "ticker": "COST",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 14.807,
+      "growth_finsaber": 14.806,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "CRM",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 13.288,
+      "growth_finsaber": 13.288,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "CSCO",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 4.693,
+      "growth_finsaber": 4.693,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "CVS",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 1.482,
+      "growth_finsaber": 1.482,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "CVX",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 2.224,
+      "growth_finsaber": 2.224,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "D",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 1.753,
+      "growth_finsaber": 1.753,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "DD",
+      "days": 3270,
+      "return_correlation": 0.9989,
+      "days_with_return_gap_above_1pct": 8,
+      "growth_yahoo": 2.529,
+      "growth_finsaber": 3.166,
+      "growth_ratio": 1.252
+    },
+    {
+      "ticker": "DE",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 6.891,
+      "growth_finsaber": 6.891,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "DHR",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 11.626,
+      "growth_finsaber": 11.683,
+      "growth_ratio": 1.005
+    },
+    {
+      "ticker": "DIS",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 3.286,
+      "growth_finsaber": 3.286,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "DUK",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 2.886,
+      "growth_finsaber": 2.886,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "EBAY",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 5.198,
+      "growth_finsaber": 5.198,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "ELV",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 6.601,
+      "growth_finsaber": 6.6,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "EMR",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 3.744,
+      "growth_finsaber": 3.743,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "EOG",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 1,
+      "growth_yahoo": 3.249,
+      "growth_finsaber": 3.208,
+      "growth_ratio": 0.987
+    },
+    {
+      "ticker": "EXC",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 2.062,
+      "growth_finsaber": 2.061,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "F",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 1.61,
+      "growth_finsaber": 1.61,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "FDX",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 3.853,
+      "growth_finsaber": 3.853,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "GD",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 5.232,
+      "growth_finsaber": 5.258,
+      "growth_ratio": 1.005
+    },
+    {
+      "ticker": "GE",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 2.447,
+      "growth_finsaber": 2.447,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "GILD",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 6.18,
+      "growth_finsaber": 6.18,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "GM",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 3.359,
+      "growth_finsaber": 3.36,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "GOOGL",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 11.409,
+      "growth_finsaber": 11.41,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "GS",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 7.634,
+      "growth_finsaber": 7.634,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "HAL",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 0.988,
+      "growth_finsaber": 0.988,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "HD",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 12.424,
+      "growth_finsaber": 12.427,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "HON",
+      "days": 3270,
+      "return_correlation": 0.9994,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 5.606,
+      "growth_finsaber": 4.858,
+      "growth_ratio": 0.867
+    },
+    {
+      "ticker": "HPQ",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 3.962,
+      "growth_finsaber": 4.0,
+      "growth_ratio": 1.009
+    },
+    {
+      "ticker": "IBM",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 2.017,
+      "growth_finsaber": 2.017,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "INTC",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 1.182,
+      "growth_finsaber": 1.182,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "JNJ",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 3.177,
+      "growth_finsaber": 3.177,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "JPM",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 9.82,
+      "growth_finsaber": 9.82,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "KMB",
+      "days": 3270,
+      "return_correlation": 0.9991,
+      "days_with_return_gap_above_1pct": 1,
+      "growth_yahoo": 2.878,
+      "growth_finsaber": 2.622,
+      "growth_ratio": 0.911
+    },
+    {
+      "ticker": "KMI",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 1.603,
+      "growth_finsaber": 1.602,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "KO",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 2.658,
+      "growth_finsaber": 2.658,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "LLY",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 25.075,
+      "growth_finsaber": 25.073,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "LMT",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 8.745,
+      "growth_finsaber": 8.747,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "LOW",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 12.209,
+      "growth_finsaber": 12.209,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "MA",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 15.383,
+      "growth_finsaber": 15.383,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "MCD",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 4.17,
+      "growth_finsaber": 4.17,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "MDLZ",
+      "days": 3270,
+      "return_correlation": 0.9138,
+      "days_with_return_gap_above_1pct": 1,
+      "growth_yahoo": 3.176,
+      "growth_finsaber": 2.092,
+      "growth_ratio": 0.659
+    },
+    {
+      "ticker": "MDT",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 2.824,
+      "growth_finsaber": 2.838,
+      "growth_ratio": 1.005
+    },
+    {
+      "ticker": "MET",
+      "days": 3270,
+      "return_correlation": 0.9994,
+      "days_with_return_gap_above_1pct": 1,
+      "growth_yahoo": 4.324,
+      "growth_finsaber": 3.697,
+      "growth_ratio": 0.855
+    },
+    {
+      "ticker": "META",
+      "days": 3175,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 15.374,
+      "growth_finsaber": 15.373,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "MMM",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 2.786,
+      "growth_finsaber": 2.786,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "MO",
+      "days": 3269,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 4.034,
+      "growth_finsaber": 4.034,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "MRK",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 4.113,
+      "growth_finsaber": 4.113,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "MS",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 10.58,
+      "growth_finsaber": 10.58,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "MSFT",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 19.957,
+      "growth_finsaber": 19.954,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "NEE",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 6.946,
+      "growth_finsaber": 6.947,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "NKE",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 3.652,
+      "growth_finsaber": 3.653,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "ORCL",
+      "days": 3270,
+      "return_correlation": 0.9999,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 7.782,
+      "growth_finsaber": 7.782,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "OXY",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 0.791,
+      "growth_finsaber": 0.79,
+      "growth_ratio": 0.999
+    },
+    {
+      "ticker": "PEP",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 3.343,
+      "growth_finsaber": 3.343,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "PFE",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 2.098,
+      "growth_finsaber": 2.103,
+      "growth_ratio": 1.002
+    },
+    {
+      "ticker": "PG",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 3.654,
+      "growth_finsaber": 3.654,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "PM",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 2.865,
+      "growth_finsaber": 2.865,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "PNC",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 4.784,
+      "growth_finsaber": 4.784,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "PSX",
+      "days": 3201,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 5.111,
+      "growth_finsaber": 5.11,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "QCOM",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 3.932,
+      "growth_finsaber": 3.933,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "RTX",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 3.364,
+      "growth_finsaber": 3.363,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "SBUX",
+      "days": 3270,
+      "return_correlation": 0.9999,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 5.108,
+      "growth_finsaber": 4.877,
+      "growth_ratio": 0.955
+    },
+    {
+      "ticker": "SLB",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 0.757,
+      "growth_finsaber": 0.758,
+      "growth_ratio": 1.001
+    },
+    {
+      "ticker": "SO",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 3.229,
+      "growth_finsaber": 3.229,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "SPG",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 2.525,
+      "growth_finsaber": 2.527,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "T",
+      "days": 3270,
+      "return_correlation": 0.9992,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 2.562,
+      "growth_finsaber": 2.114,
+      "growth_ratio": 0.825
+    },
+    {
+      "ticker": "TGT",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 3.79,
+      "growth_finsaber": 3.79,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "TJX",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 9.011,
+      "growth_finsaber": 9.011,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "TMO",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 11.672,
+      "growth_finsaber": 11.672,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "TSLA",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 215.726,
+      "growth_finsaber": 215.726,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "TXN",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 8.936,
+      "growth_finsaber": 8.936,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "UNH",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 11.986,
+      "growth_finsaber": 11.985,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "UNP",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 5.602,
+      "growth_finsaber": 5.601,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "UPS",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 2.57,
+      "growth_finsaber": 2.57,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "USB",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 2.621,
+      "growth_finsaber": 2.621,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "V",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 13.472,
+      "growth_finsaber": 13.473,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "VZ",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 1.905,
+      "growth_finsaber": 1.905,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "WFC",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 3.578,
+      "growth_finsaber": 3.578,
+      "growth_ratio": 1.0
+    },
+    {
+      "ticker": "WMT",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 5.906,
+      "growth_finsaber": 5.9,
+      "growth_ratio": 0.999
+    },
+    {
+      "ticker": "XOM",
+      "days": 3270,
+      "return_correlation": 1.0,
+      "days_with_return_gap_above_1pct": 0,
+      "growth_yahoo": 2.095,
+      "growth_finsaber": 2.095,
+      "growth_ratio": 1.0
+    }
+  ]
+}

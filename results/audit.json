@@ -1,0 +1,180 @@
+{
+  "period": [
+    "2015-01-02",
+    "2024-11-04"
+  ],
+  "days": 2477,
+  "reproduce": {
+    "buy_and_hold": {
+      "final_value": 688711,
+      "cagr_pct": 21.69,
+      "sharpe": 0.9,
+      "max_drawdown_pct": -46.3
+    },
+    "volatility_2.5x": {
+      "final_value": 1046173,
+      "cagr_pct": 26.98,
+      "sharpe": 0.86,
+      "max_drawdown_pct": -62.4
+    }
+  },
+  "sharpe_with_2pct_risk_free": {
+    "buy_and_hold": 0.82,
+    "volatility_2.5x": 0.8
+  },
+  "trims": {
+    "total": 47,
+    "by_ticker": {
+      "SPY": 14,
+      "QQQ": 7,
+      "VOO": 15,
+      "AAPL": 5,
+      "MSFT": 6,
+      "TSLA": 0
+    },
+    "by_year": {
+      "2018": 18,
+      "2020": 29
+    }
+  },
+  "tsla_weight_pct": {
+    "2020-02-19": {
+      "strategy": 22,
+      "buy_and_hold": 15
+    },
+    "2020-03-23": {
+      "strategy": 22,
+      "buy_and_hold": 11
+    },
+    "2020-06-30": {
+      "strategy": 49,
+      "buy_and_hold": 17
+    },
+    "2021-11-04": {
+      "strategy": 77,
+      "buy_and_hold": 41
+    },
+    "2024-11-04": {
+      "strategy": 60,
+      "buy_and_hold": 24
+    },
+    "strategy_peak": 77
+  },
+  "tsla_shares_vs_start": 3.77,
+  "index_fund_weight_end_pct": {
+    "strategy": 10,
+    "buy_and_hold": 34
+  },
+  "without_tsla": {
+    "buy_and_hold": {
+      "final_value": 580686,
+      "cagr_pct": 19.6,
+      "sharpe": 0.94,
+      "max_drawdown_pct": -30.1
+    },
+    "volatility_2.5x": {
+      "final_value": 690876,
+      "cagr_pct": 21.73,
+      "sharpe": 0.97,
+      "max_drawdown_pct": -32.1
+    }
+  },
+  "excess_over_buy_and_hold_pct": {
+    "with_tsla": 52,
+    "without_tsla": 19
+  },
+  "tests": {
+    "multiplier 1.5": {
+      "final_value": 541437,
+      "cagr_pct": 18.75,
+      "sharpe": 0.74,
+      "max_drawdown_pct": -54.8
+    },
+    "multiplier 2.0": {
+      "final_value": 850176,
+      "cagr_pct": 24.33,
+      "sharpe": 0.87,
+      "max_drawdown_pct": -55.1
+    },
+    "multiplier 2.5": {
+      "final_value": 1046173,
+      "cagr_pct": 26.98,
+      "sharpe": 0.86,
+      "max_drawdown_pct": -62.4
+    },
+    "multiplier 2.5, no trims from Feb to Jun 2020": {
+      "final_value": 852103,
+      "cagr_pct": 24.36,
+      "sharpe": 0.91,
+      "max_drawdown_pct": -51.6
+    },
+    "multiplier 2.5, trade on the next day": {
+      "final_value": 1038336,
+      "cagr_pct": 26.88,
+      "sharpe": 0.86,
+      "max_drawdown_pct": -62.4
+    }
+  },
+  "cash_bug": {
+    "Trim@+50% (cash)": {
+      "original_method": {
+        "final_value": 443061,
+        "cagr_pct": 16.35,
+        "sharpe": 0.48,
+        "max_drawdown_pct": -24.7
+      },
+      "daily_cash": {
+        "final_value": 443061,
+        "cagr_pct": 16.35,
+        "sharpe": 0.98,
+        "max_drawdown_pct": -26.1
+      },
+      "final_cash_balance": 168318
+    },
+    "Trim@+100% (cash)": {
+      "original_method": {
+        "final_value": 534860,
+        "cagr_pct": 18.6,
+        "sharpe": 0.61,
+        "max_drawdown_pct": -30.0
+      },
+      "daily_cash": {
+        "final_value": 534860,
+        "cagr_pct": 18.6,
+        "sharpe": 0.96,
+        "max_drawdown_pct": -32.8
+      },
+      "final_cash_balance": 148240
+    },
+    "Trim@+100% (yield-volatility)": {
+      "original_method": {
+        "final_value": 627521,
+        "cagr_pct": 20.54,
+        "sharpe": 0.95,
+        "max_drawdown_pct": -35.1
+      },
+      "daily_cash": {
+        "final_value": 627521,
+        "cagr_pct": 20.54,
+        "sharpe": 0.97,
+        "max_drawdown_pct": -35.1
+      },
+      "final_cash_balance": 82
+    },
+    "Volatility-2.5x (yield-volatility)": {
+      "original_method": {
+        "final_value": 598999,
+        "cagr_pct": 19.98,
+        "sharpe": 0.78,
+        "max_drawdown_pct": -59.7
+      },
+      "daily_cash": {
+        "final_value": 598999,
+        "cagr_pct": 19.98,
+        "sharpe": 0.87,
+        "max_drawdown_pct": -44.4
+      },
+      "final_cash_balance": 96
+    }
+  }
+}
